@@ -1,0 +1,280 @@
+const projects = [{
+        id: "5metelecom",
+        name: "5metelecom",
+        description: "A mobile/Internet subscription system called Saturn Tech. It that enables customers have access to reliable high speed broadband and large data. It is mobile responsive with easy/simple navigation. it integrates with paystack payment Api.",
+        img: "https://vickzil.github.io/images/img/5m1.png",
+        class: "corporate",
+        tools: [
+            "https://vickzil.github.io/images/img/material-css.png",
+            "https://vickzil.github.io/images/img/html.png",
+            "https://vickzil.github.io/images/img/css.png",
+            "https://vickzil.github.io/images/img/js.png",
+            "https://vickzil.github.io/images/img/bootstrap.png",
+            "https://vickzil.github.io/images/img/php.png",
+            "https://vickzil.github.io/images/img/fontaesome.png",
+            "https://vickzil.github.io/images/img/mysql.png",
+        ],
+        url: "https://www.5mtelecom.com/",
+        label: "fml",
+        project_images: [
+            "https://vickzil.github.io/images/img/5m4.png",
+            "https://vickzil.github.io/images/img/5m2.png",
+            "https://vickzil.github.io/images/img/5m3.png",
+        ]
+    },
+    {
+        id: "musicapp",
+        name: "Music App",
+        description: "After playing the WWTBAM (who wants to be a millionaire) game, I was inspired by the hole concept of the game, the 50/50, ask the audience, and mostly showing correct answer. I decided that I will build such. so while exercising my JavaScript skills, I decided to create a Quiz App similar to WWTBAM concept. This project was a bit challenging. 80% of time spent on this project was mainly debugging. I added the ability for the user to choose any categories of knowledge such science, current affairs [Nigerian current Affairs], football and animal questions. its pure vanilla JavaScript and a little bit of jQuery to make it more easier. The point of creating this game is to enhance my JavaScript skills and also to kill the boredom.No better way to kill boredom than playing a Quiz, just answer few simple questions.",
+        img: "https://vickzil.github.io/images/img/musicApp1.png",
+        class: "custom",
+        tools: [
+            "https://vickzil.github.io/images/img/html.png",
+            "https://vickzil.github.io/images/img/css.png",
+            "https://vickzil.github.io/images/img/js.png",
+            "https://vickzil.github.io/images/img/bootstrap.png",
+            "https://vickzil.github.io/images/img/fontaesome.png",
+            "https://vickzil.github.io/images/img/github.png",
+            "https://vickzil.github.io/images/img/firebase.png",
+            "https://vickzil.github.io/images/img/vuejs.png",
+            "https://vickzil.github.io/images/img/material-css.png",
+        ],
+        url: "https://musicapp-5f41a.web.app/",
+        label: "mua",
+        project_images: [
+            "https://vickzil.github.io/images/img/mu2.png",
+            "https://vickzil.github.io/images/img/mu1.png",
+        ]
+    },
+    {
+        id: "pnp",
+        name: "PNP Construction",
+        description: "A mobile/Internet subscription system called Saturn Tech. It that enables customers have access to reliable high speed broadband and large data. It is mobile responsive with easy/simple navigation. it integrates with paystack payment Api.",
+        img: "https://vickzil.github.io/images/img/pnp1.png",
+        class: "WordPressPP",
+        tools: [
+            "https://vickzil.github.io/images/img/wordpress.png",
+            "https://vickzil.github.io/images/img/html.png",
+            "https://vickzil.github.io/images/img/css.png",
+            "https://vickzil.github.io/images/img/js.png",
+            "https://vickzil.github.io/images/img/bootstrap.png",
+            "https://vickzil.github.io/images/img/php.png",
+            "https://vickzil.github.io/images/img/fontaesome.png",
+            "https://vickzil.github.io/images/img/mysql.png",
+        ],
+        url: "https://pnpconstruction.ca/",
+        label: "pnp",
+        project_images: [
+            "https://vickzil.github.io/images/img/pnp4.png",
+            "https://vickzil.github.io/images/img/pnp2.png",
+            "https://vickzil.github.io/images/img/pnp3.png",
+
+        ]
+    },
+
+    {
+        id: "playquiz",
+        name: "Playquiz",
+        description: "After playing the WWTBAM (who wants to be a millionaire) game, I was inspired by the hole concept of the game, the 50/50, ask the audience, and mostly showing correct answer. I decided that I will build such. so while exercising my JavaScript skills, I decided to create a Quiz App similar to WWTBAM concept. This project was a bit challenging. 80% of time spent on this project was mainly debugging. I added the ability for the user to choose any categories of knowledge such science, current affairs [Nigerian current Affairs], football and animal questions. its pure vanilla JavaScript and a little bit of jQuery to make it more easier. The point of creating this game is to enhance my JavaScript skills and also to kill the boredom.No better way to kill boredom than playing a Quiz, just answer few simple questions.",
+        img: "https://vickzil.github.io/images/img/p3.png",
+        class: "custom",
+        tools: [
+            "https://vickzil.github.io/images/img/html.png",
+            "https://vickzil.github.io/images/img/css.png",
+            "https://vickzil.github.io/images/img/js.png",
+            "https://vickzil.github.io/images/img/bootstrap.png",
+            "https://vickzil.github.io/images/img/fontaesome.png",
+            "https://vickzil.github.io/images/img/github.png",
+            "https://vickzil.github.io/images/img/material-css.png",
+        ],
+        url: "https://vickzil.github.io/playquiz/",
+        label: "pq",
+        project_images: [
+            "https://vickzil.github.io/images/img/py2.png",
+            "https://vickzil.github.io/images/img/py3.png",
+            "https://vickzil.github.io/images/img/py4.png",
+            "https://vickzil.github.io/images/img/py1.png",
+        ]
+    },
+    {
+        id: "mobotmovies",
+        name: "Mobot Movies",
+        description: "Mobot is a free Movie search website featuring many clasic movies and TV shows. The Category Includes Adventure, Comedy, Classic Tv, Cartoons, Crime, Drama, Horror and Sci-Fi. Movies are one of the utmost form of entertainment. Do you know where you can find movies online for free? Streaming movies are very beneficial for people who do not want to keep movies and fill up space on their devices. Not only movies but also stream TV series and along with hosting a variety of content. Those thoughts let me to develop this awesome movie site. It has elegant UI/UX designs and developed using themoviedb API with pure vanilla JavaScript. Please Check it out...",
+        img: "https://vickzil.github.io/images/img/p4.png",
+        class: "custom",
+        tools: [
+            "https://vickzil.github.io/images/img/firebase.png",
+            "https://vickzil.github.io/images/img/html.png",
+            "https://vickzil.github.io/images/img/css.png",
+            "https://vickzil.github.io/images/img/js.png",
+            "https://vickzil.github.io/images/img/bootstrap.png",
+            "https://vickzil.github.io/images/img/fontaesome.png",
+            "https://vickzil.github.io/images/img/github.png",
+            "https://vickzil.github.io/images/img/material-css.png",
+        ],
+        url: "https://mobot-movies.web.app/",
+        label: "mobot",
+        project_images: [
+            "https://vickzil.github.io/images/img/mbot1.png",
+            "https://vickzil.github.io/images/img/mbot2.png",
+        ]
+    },
+    {
+        id: "phphospital",
+        name: "Hospital Management",
+        description: "This is a hospital management system that keep records of staffs, doctors, and patients. It has Lovely built-in features such as a notification system, Trello like Task system, staffs Activity monitory system, email validation and notification, Weather Interactivity, simple and easy login and regristrtion. This is my first full - stack project with more than 50 php files.I am current working o this project to implement full hosiptal management features ",
+        img: "https://vickzil.github.io/images/img/p10.png",
+        class: "custom",
+        tools: [
+            "https://vickzil.github.io/images/img/mysql.png",
+            "https://vickzil.github.io/images/img/html.png",
+            "https://vickzil.github.io/images/img/css.png",
+            "https://vickzil.github.io/images/img/js.png",
+            "https://vickzil.github.io/images/img/bootstrap.png",
+            "https://vickzil.github.io/images/img/fontaesome.png",
+            "https://vickzil.github.io/images/img/php.png",
+            "https://vickzil.github.io/images/img/material-css.png",
+        ],
+        url: "https://phphospital.000webhostapp.com/",
+        label: "phphospital",
+        project_images: [
+            "https://vickzil.github.io/images/img/php2.png",
+            "https://vickzil.github.io/images/img/php3.png",
+            "https://vickzil.github.io/images/img/php1.png",
+        ]
+    },
+    {
+        id: "saturn",
+        name: "Saturn Technology",
+        description: "Saturn Tech is a mobile/Internet subscription system that enables customers have access to relaible high speed broadband and large data.",
+        img: "https://vickzil.github.io/images/img/p11.png",
+        class: "custom",
+        tools: [
+            "https://vickzil.github.io/images/img/mysql.png",
+            "https://vickzil.github.io/images/img/html.png",
+            "https://vickzil.github.io/images/img/css.png",
+            "https://vickzil.github.io/images/img/js.png",
+            "https://vickzil.github.io/images/img/bootstrap.png",
+            "https://vickzil.github.io/images/img/fontaesome.png",
+            "https://vickzil.github.io/images/img/php.png",
+            "https://vickzil.github.io/images/img/material-css.png",
+        ],
+        url: "http://5mtele.000webhostapp.com/",
+        label: "saturn",
+        project_images: [
+            "https://vickzil.github.io/images/img/sa1.png",
+            "https://vickzil.github.io/images/img/sa2.png",
+            "https://vickzil.github.io/images/img/sa3.png",
+            "https://vickzil.github.io/images/img/sa4.jpg",
+        ]
+    },
+    {
+        id: "pexelbay",
+        name: "pexelbay",
+        description: "Pexelbay is a web application that allow users to search images and videos. It is integrated using pixabay API for free stock images and videos. The UI and UX is inspired by Pexels.com and Pixabay.com. There are lots of similarities that can be found in this project, associated to these mentioned websites, which includes both features and functionalities. It is practically a clone ( Design copy) of pixabay website. This project was created not to violate any privacy policy or terms & agreements but just to showcase my skills in building a replica of web apps and also to enhance my skills and experience using different web technologies and tools. This project is build using Vuejs / Vuex State Management system ",
+        img: "https://vickzil.github.io/images/img/pexelbay.PNG",
+        class: "custom",
+        tools: [
+            "https://vickzil.github.io/images/img/nodejs-icon.png",
+            "https://vickzil.github.io/images/img/html.png",
+            "https://vickzil.github.io/images/img/expressjs.png",
+            "https://vickzil.github.io/images/img/css.png",
+            "https://vickzil.github.io/images/img/js.png",
+            "https://vickzil.github.io/images/img/bootstrap.png",
+            "https://vickzil.github.io/images/img/fontaesome.png",
+            "https://vickzil.github.io/images/img/material-css.png",
+            "https://vickzil.github.io/images/img/firebase.png",
+            "https://vickzil.github.io/images/img/vuejs.png",
+        ],
+        url: "https://pexelbay.netlify.app/",
+        label: "pexelbay",
+        project_images: [
+            "https://vickzil.github.io/images/img/pexelbay2.png",
+            "https://vickzil.github.io/images/img/pexelbay3.png",
+            "https://vickzil.github.io/images/img/pexelbay4.png",
+        ]
+    },
+    {
+        id: "musicplaylist",
+        name: "Music Playlist",
+        description: "Vuejs Music Playlist with elegant dark background.. ",
+        img: "https://vickzil.github.io/images/img/musicApp4.png",
+        class: "custom",
+        tools: [
+            "https://vickzil.github.io/images/img/nodejs-icon.png",
+            "https://vickzil.github.io/images/img/html.png",
+            "https://vickzil.github.io/images/img/expressjs.png",
+            "https://vickzil.github.io/images/img/css.png",
+            "https://vickzil.github.io/images/img/js.png",
+            "https://vickzil.github.io/images/img/bootstrap.png",
+            "https://vickzil.github.io/images/img/fontaesome.png",
+            "https://vickzil.github.io/images/img/material-css.png",
+            "https://vickzil.github.io/images/img/firebase.png",
+            "https://vickzil.github.io/images/img/vuejs.png",
+        ],
+        url: "https://musicplaylist-662a6.web.app/",
+        label: "musicplaylist",
+        project_images: [
+            "https://vickzil.github.io/images/img/musicApp4.png",
+        ]
+    },
+    {
+        id: "mbclothing",
+        name: "MB Clothing",
+        description: "MB Clothing is an Online e-Commerce Website build with VueJs.  This project was created to enhance my skills and experience using different web technologies and tools. This project is build using Vuejs / Vuex State Management system ",
+        img: "https://vickzil.github.io/images/img/p17.png",
+        class: "ecommerce",
+        tools: [
+            "https://vickzil.github.io/images/img/nodejs-icon.png",
+            "https://vickzil.github.io/images/img/html.png",
+            "https://vickzil.github.io/images/img/expressjs.png",
+            "https://vickzil.github.io/images/img/css.png",
+            "https://vickzil.github.io/images/img/js.png",
+            "https://vickzil.github.io/images/img/bootstrap.png",
+            "https://vickzil.github.io/images/img/fontaesome.png",
+            "https://vickzil.github.io/images/img/material-css.png",
+            "https://vickzil.github.io/images/img/firebase.png",
+            "https://vickzil.github.io/images/img/vuejs.png",
+        ],
+        url: "https://vueclothing-cb4be.firebaseapp.com/",
+        label: "mbclothing",
+        project_images: [
+            "https://vickzil.github.io/images/img/mb2.png",
+            "https://vickzil.github.io/images/img/mb4.png",
+            "https://vickzil.github.io/images/img/mb3.png",
+
+        ]
+    },
+
+    {
+        id: "blueatomsmedia",
+        name: "Blueatoms Media",
+        description: "Blueatoms media is a web solution provider. They offer a wide range of Digital Marketing & Web Development Services. Their services include web design, web development, Social media marketing, SEO & more. It is built using Wordpress Content Management System.",
+        img: "https://vickzil.github.io/images/img/blueatom.png",
+        class: "WordPressPP",
+        tools: [
+            "https://vickzil.github.io/images/img/wordpress.png",
+            "https://vickzil.github.io/images/img/html.png",
+            "https://vickzil.github.io/images/img/css.png",
+            "https://vickzil.github.io/images/img/js.png",
+            "https://vickzil.github.io/images/img/bootstrap.png",
+            "https://vickzil.github.io/images/img/php.png",
+            "https://vickzil.github.io/images/img/fontaesome.png",
+            "https://vickzil.github.io/images/img/mysql.png",
+        ],
+        url: "https://blueatomsmedia.com/",
+        label: "blueatomsmedia",
+        project_images: [
+            "https://vickzil.github.io/images/img/bam1.png",
+            "https://vickzil.github.io/images/img/bam3.png",
+            "https://vickzil.github.io/images/img/bam2.png",
+
+        ]
+    },
+];
+
+export default {
+    getProjects() {
+        return projects;
+    },
+};
