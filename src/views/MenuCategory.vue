@@ -6,7 +6,7 @@
         <div id="site-content" class="categoryPage">
           <div class="container-fluid movie-details" id="movie-details">
             <!-- ALL MOVIES -->
-            <div class="movies mt-5" v-if="films.length">
+            <div class="movies" v-if="films.length">
               <h3 class="movie-heading mb-4" id="all-movie-title">{{pathName}}</h3>
 
               <div id="totalMovies">

@@ -11,11 +11,8 @@ export const SHOW_LOADING = (state) => {
 
 // GET TRENDING MOVIES
 export const GET_TRENDING_MOVIES = (state, movies) => {
-    let index = Math.floor(Math.random() * movies.length);
     state.trending = movies;
-    if (movies) {
-        state.currentHomeMovie = movies[index];
-    }
+
 
 };
 // GET TRENDING MOVIES
@@ -38,7 +35,11 @@ export const GET_TV_SERIES = (state, movies) => {
 
 // GET ALL MOVIES
 export const GET_ALL_MOVIES = (state, movies) => {
+    let index = Math.floor(Math.random() * movies.length);
     state.movies = movies;
+    if (movies) {
+        state.currentHomeMovie = movies[index];
+    }
 };
 
 

@@ -138,9 +138,9 @@ export default {
 
   methods: {
     updateCurrentMovie: function() {
-      if (this.getTrendingMovies) {
-        let index = Math.floor(Math.random() * this.getTrendingMovies.length);
-        let currentMovie = this.getTrendingMovies[index];
+      if (this.films) {
+        let index = Math.floor(Math.random() * this.films.length);
+        let currentMovie = this.films[index];
         this.$store.dispatch("updateCurrentMovie", currentMovie);
       }
     },
@@ -159,34 +159,33 @@ export default {
         array[index] = temp;
       }
       return array;
-    },
-    changeBanner: function() {
-      this.$store.state.currentHomeMovie = this.films[this.i];
-
-      if (this.i < this.films.length - 1) {
-        this.i += 1;
-      } else {
-        this.i = 1;
-      }
-    },
-
-    mountingBanner: function() {
-      setInterval(() => {
-        this.changeBanner();
-      }, this.time);
-    },
-    resetI: function() {
-      this.i = 1;
     }
+    // changeBanner: function() {
+    //   this.$store.state.currentHomeMovie = this.films[this.i];
+
+    //   if (this.i < this.films.length - 1) {
+    //     this.i += 1;
+    //   } else {
+    //     this.i = 1;
+    //   }
+    // },
+
+    // mountingBanner: function() {
+    //   setInterval(() => {
+    //     this.changeBanner();
+    //   }, this.time);
+    // },
+    // resetI: function() {
+    //   this.i = 1;
+    // }
   },
 
   mounted() {
     this.updateCurrentMovie();
-    this.mountingBanner();
+    // this.mountingBanner();
     this.currentSitePage = this.$router.history.current.name;
   },
   beforeRouteLeave(to, from, next) {
-    this.resetI();
     this.searchInput = "";
     this.isCategorySearching = false;
     next();

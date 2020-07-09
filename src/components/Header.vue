@@ -12,16 +12,9 @@
             </a>
           </h1>
         </div>
-        <form
-          class="search_form"
-          id="searchForm"
-          :class="showSearchForm && 'search_open'"
-          v-if="!currentPage"
-          @submit.prevent="searchMovies"
-        >
+        <form class="search_form" id="searchForm" @submit.prevent="searchMovies">
           <input
             type="search"
-            :class="showSearchForm && 'input_open'"
             id="header-input"
             v-model="searchInput"
             autocomplete="off"
@@ -50,6 +43,24 @@
       <a @click="getActionMovies('10751')" class="war_nav">FAMILY</a>
     </aside>
     <div class="overlay" v-if="showNavMenu" @click="closeNavigationMenu"></div>
+    <transition name="showup">
+      <form
+        @submit.prevent="searchMovies"
+        class="mobile-form"
+        :class="showSearchForm && 'mobile-form-open'"
+      >
+        <i class="fa fa-times mobile_search_close" @click="showSearch"></i>
+        <div class="form_div_control">
+          <input
+            type="text"
+            placeholder="Search any movie"
+            v-model="searchInput"
+            autocomplete="off"
+          />
+          <i class="fa fa-search ml-1" style="color: #fff;" @click="searchMovies"></i>
+        </div>
+      </form>
+    </transition>
   </div>
 </template>
 
@@ -103,6 +114,7 @@ export default {
         this.removeSearchInputValue();
         return;
       } else {
+        this.$store.state.showSearchForm = false;
         this.searchAllMovies();
       }
     },
@@ -183,6 +195,15 @@ export default {
 
 .fade-enter,
 .fade-leave-to {
+  opacity: 0;
+}
+.showup-enter-active,
+.showup-leave-active {
+  transition: opacity 0.25 ease-out;
+}
+
+.showup-enter,
+.showup-leave-to {
   opacity: 0;
 }
 </style>
