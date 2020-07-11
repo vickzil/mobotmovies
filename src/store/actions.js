@@ -83,6 +83,18 @@ export const getRelatedMovies = ({
 };
 
 
+// GET RELATED MOVIES
+export const getActorRelatedMovies = ({
+    commit
+}, movieid) => {
+    const urlPath = url + "person/" + movieid + "/movie_credits?api_key=" + apiKEY;
+
+    axios.get(urlPath).then(response => {
+        commit("GET_ACTOR_RELATED_MOVIES", response.data.cast);
+    }).catch(err => console.log(err));
+};
+
+
 // GET SINGLE MOVIES
 export const getSingleMovieDetails = ({
     commit

@@ -49,6 +49,11 @@ export const GET_RELATED_MOVIES = (state, movies) => {
 
 };
 
+// GET RELATED MOVIES
+export const GET_ACTOR_RELATED_MOVIES = (state, movies) => {
+    state.actorMovieCredits = movies;
+};
+
 
 // GET MOVIES DETAILS
 export const GET_MOVIE_DETAILS = (state, movie) => {

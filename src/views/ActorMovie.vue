@@ -27,6 +27,11 @@
           <div id="site-content">
             <div class="container-fluid movie-details" id="movie-details">
               <!-- ALL MOVIES -->
+              <div class="movies" v-if="movies.length">
+                <h3 class="movie-heading" id="all-movie-title">{{movie.name}}'s Movies:</h3>
+                <RelatedMovies :movies="movies" />
+              </div>
+
               <div class="movies">
                 <h3 class="movie-heading" id="all-movie-title">FEATURED MOVIES:</h3>
                 <div id="totalMovies">
@@ -45,6 +50,7 @@
 </template>
 
 <script>
+import RelatedMovies from "../components/RelatedMovies";
 import AllMovies from "../components/AllMovies";
 import LoadingMovies from "../components/LoadingMovies";
 import NoResult from "../components/NoResult";
@@ -52,7 +58,8 @@ export default {
   components: {
     AllMovies,
     LoadingMovies,
-    NoResult
+    NoResult,
+    RelatedMovies
   },
 
   data() {
@@ -71,6 +78,12 @@ export default {
       return this.$store.state.imageUrl;
     },
 
+    movies() {
+      let movie = this.$store.state.actorMovieCredits;
+      let newMovie = this.shuffleArray(movie);
+      return newMovie;
+    },
+
     films() {
       let movie = this.$store.state.movies;
       let newMovie = this.shuffleArray(movie);
@@ -82,6 +95,10 @@ export default {
   methods: {
     getSingleActorDetails: function() {
       this.$store.dispatch("getSingleActorDetails", this.id);
+    },
+
+    getActorRelatedMovies: function() {
+      this.$store.dispatch("getActorRelatedMovies", this.id);
     },
 
     shuffleArray: function(array) {
@@ -112,6 +129,7 @@ export default {
     updateMovie: function() {
       setInterval(() => {
         this.closeLoadingContent();
+        console.log(this.movies);
       }, 1000);
     }
   },
@@ -119,6 +137,7 @@ export default {
     this.closeLoadingContent();
     this.getSingleActorDetails();
     this.updateMovie();
+    this.getActorRelatedMovies();
     this.currentSitePage = this.$router.history.current.name;
   },
   watch: {

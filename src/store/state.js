@@ -19,6 +19,7 @@ export default {
   series: [],
   crews: [],
   relatedMovies: [],
+  actorMovieCredits: [],
   menuCategory: [],
   currentPage: 2,
   currentCatPage: 2,
