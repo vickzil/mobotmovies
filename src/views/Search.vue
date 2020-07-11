@@ -23,6 +23,7 @@
                 <div class="category-movies" id="cat-id">
                   <MovieOneCard v-for="movie in films" :key="movie.id" :movie="movie" />
                 </div>
+                <LoadMoreSearchMovies :films="films" :query="query" />
               </div>
             </div>
 
@@ -41,11 +42,13 @@ import axios from "axios";
 import MovieOneCard from "../components/MovieOneCard";
 import LoadingMovies from "../components/LoadingMovies";
 import NoResult from "../components/NoResult";
+import LoadMoreSearchMovies from "../components/LoadMoreSearchMovies";
 export default {
   components: {
     MovieOneCard,
     LoadingMovies,
-    NoResult
+    NoResult,
+    LoadMoreSearchMovies
   },
   data() {
     return {
@@ -64,7 +67,7 @@ export default {
       return this.$store.state.apiKEY;
     },
     query() {
-      let path = "search/movie";
+      let path = this.searchInput;
       return path;
     },
     currentCatPage: {
@@ -125,10 +128,12 @@ export default {
         .get(urlPath)
         .then(response => {
           this.$store.dispatch("searchCategoryMovies", response.data.results);
+          this.currentSearchPage = 2;
           this.isCategorySearching = true;
         })
         .catch(err => {
           this.isCategorySearching = false;
+          this.currentSearchPage = 2;
           console.log(err);
         });
     },
@@ -145,7 +150,7 @@ export default {
     this.currentSitePage = this.$router.history.current.name;
   },
   beforeRouteLeave(to, from, next) {
-    this.currentCatPage = 2;
+    this.currentSearchPage = 2;
     this.searchInput = "";
     this.isCategorySearching = false;
     next();

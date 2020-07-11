@@ -107,6 +107,16 @@ export default {
       }
       return pageNma;
     },
+    querySearch() {
+      let searchQuery;
+      if (this.id == "tv") {
+        searchQuery = "search/tv";
+      } else {
+        searchQuery = "search/movie";
+      }
+
+      return searchQuery;
+    },
     currentCatPage: {
       get() {
         return this.$store.state.currentCatPage;
@@ -168,8 +178,16 @@ export default {
     },
 
     searchCategoryMovies: function() {
+      let pageNma;
+      if (this.id == "tv") {
+        pageNma = "search/tv";
+      } else {
+        pageNma = "search/movie";
+      }
       const urlPath =
-        "https://api.themoviedb.org/3/search/movie?api_key=" +
+        "https://api.themoviedb.org/3/" +
+        pageNma +
+        "?api_key=" +
         this.apiKEY +
         "&query=" +
         this.searchInput;
@@ -179,9 +197,11 @@ export default {
         .then(response => {
           this.$store.dispatch("searchCategoryMovies", response.data.results);
           this.isCategorySearching = true;
+          this.currentCatPage = 2;
         })
         .catch(err => {
           this.isCategorySearching = false;
+          this.currentCatPage = 2;
           console.log(err);
         });
     },

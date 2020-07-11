@@ -129,7 +129,6 @@ export default {
     updateMovie: function() {
       setInterval(() => {
         this.closeLoadingContent();
-        console.log(this.movies);
       }, 1000);
     }
   },

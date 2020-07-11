@@ -100,6 +100,18 @@ export const FETCH_MORE_MENU_CAT__MOVIE = (state, movies) => {
 
 
 // GET MORE CATEGORY MOVIES 
+export const FETCH_MORE_SEARCH_MOVIES_MOVIE = (state, movies) => {
+    if (state.isCategorySearching) {
+        state.searchHolder = [...state.searchHolder, ...movies];
+    } else {
+        state.search = [...state.search, ...movies];
+    }
+
+
+};
+
+
+// GET MORE CATEGORY MOVIES 
 export const SEARCH_CATEGORY_MOVIE = (state, movies) => {
     state.searchHolder = movies;
 
@@ -114,7 +126,12 @@ export const FETCH_MORE_MOVIE = (state, movies) => {
 
 // GET MORE MOVIES
 export const FETCH_ALL_CATEGORY_MOVIE = (state, movies) => {
-    state.category = [...state.category, ...movies];
+    if (state.isCategorySearching) {
+        state.searchHolder = [...state.searchHolder, ...movies];
+    } else {
+        state.category = [...state.category, ...movies];
+    }
+
 };
 
 // UPDATE CURRENT MOVIES

@@ -12,7 +12,7 @@ export default {
   data() {
     return {
       isBussy: false,
-      maxPerpage: 30,
+      maxPerpage: 20,
       totalResult: 300
     };
   },
@@ -69,13 +69,6 @@ export default {
     },
 
     fetchMoreMovies: async function() {
-      //   const urlPath =
-      //     "https://api.themoviedb.org/3/" +
-      //     this.query +
-      //     "?api_key=" +
-      //     this.APIKEY +
-      //     "&page=" +
-      //     this.currentPage;
       const urlPath =
         "https://api.themoviedb.org/3/discover/movie?api_key=" +
         this.APIKEY +

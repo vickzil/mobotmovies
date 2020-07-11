@@ -180,6 +180,14 @@ export const fetchMoreMenuCategoryMovies = ({
 };
 
 
+// GET  MOVIES VIDEOS
+export const fetchMoreSearchMovies = ({
+    commit
+}, movies) => {
+    commit("FETCH_MORE_SEARCH_MOVIES_MOVIE", movies);
+};
+
+
 
 // SEARCH ALL MOVIES
 export const searchAllMovies = ({

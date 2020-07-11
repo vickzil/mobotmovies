@@ -12,7 +12,7 @@ export default {
   data() {
     return {
       isBussy: false,
-      maxPerpage: 30,
+      maxPerpage: 20,
       totalResult: 300
     };
   },
@@ -43,39 +43,62 @@ export default {
       set(value) {
         return (this.$store.state.isCategorySearching = value);
       }
+    },
+    searchInput: {
+      get() {
+        return this.$store.state.searchInput;
+      },
+      set(value) {
+        return (this.$store.state.searchInput = value);
+      }
     }
   },
 
   methods: {
     scrollTrigger: function() {
-      if (!this.isCategorySearching) {
-        const observer = new IntersectionObserver(entries => {
-          entries.forEach(entry => {
-            if (
-              entry.intersectionRatio > 0 &&
-              this.currentPage < this.pageCount
-            ) {
-              this.isBussy = true;
-              this.currentPage += 1;
-              this.fetchMoreMovies();
-            }
-          });
+      // if (!this.isCategorySearching) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (
+            entry.intersectionRatio > 0 &&
+            this.currentPage < this.pageCount
+          ) {
+            this.isBussy = true;
+            this.currentPage += 1;
+            this.fetchMoreMovies();
+          } else {
+            this.isBussy = false;
+          }
         });
+      });
 
-        observer.observe(this.$refs.infinitescrolltrigger);
-      } else {
-        this.isBussy = false;
-      }
+      observer.observe(this.$refs.infinitescrolltrigger);
+      // } else {
+      //   this.isBussy = false;
+      // }
     },
 
     fetchMoreMovies: async function() {
-      const urlPath =
-        "https://api.themoviedb.org/3/" +
-        this.query +
-        "?api_key=" +
-        this.APIKEY +
-        "&page=" +
-        this.currentPage;
+      let urlPath;
+
+      if (this.isCategorySearching) {
+        urlPath =
+          "https://api.themoviedb.org/3/search/tv?api_key=" +
+          this.APIKEY +
+          "&query=" +
+          this.searchInput +
+          "&page=" +
+          this.currentPage;
+      } else {
+        urlPath =
+          "https://api.themoviedb.org/3/" +
+          this.query +
+          "?api_key=" +
+          this.APIKEY +
+          "&page=" +
+          this.currentPage;
+      }
+
       let res = await fetch(urlPath);
       let movies = await res.json();
       this.$store.dispatch("fetchAllCatMovies", movies.results);
@@ -83,6 +106,9 @@ export default {
       this.isBussy = false;
       if (this.totalResult < movies.total_results) {
         this.totalResult = movies.total_results;
+      }
+      if (movies.results.length < 0) {
+        this.isBussy = false;
       }
     }
   },

@@ -1,8 +1,5 @@
 <template>
   <div>
-    <div class="category-movies" id="cat-id">
-      <MovieOneCard v-for="movie in films" :key="movie.id" :movie="movie" />
-    </div>
     <div ref="infinitescrolltrigger" class="scroll-trigger">
       <span class="spinner-grow spinner-grow-md" role="status" v-if="isBussy" aria-hidden="true"></span>
     </div>
@@ -10,26 +7,22 @@
 </template>
  
 <script>
-import MovieOneCard from "./MovieOneCard";
 export default {
-  components: {
-    MovieOneCard
-  },
   props: ["films", "query"],
   data() {
     return {
       isBussy: false,
-      maxPerpage: 20,
+      maxPerpage: 30,
       totalResult: 300
     };
   },
   computed: {
     currentPage: {
       get() {
-        return this.$store.state.currentCatPage;
+        return this.$store.state.currentSearchPage;
       },
       set(value) {
-        return (this.$store.state.currentCatPage = value);
+        return (this.$store.state.currentSearchPage = value);
       }
     },
     APIKEY() {
@@ -50,20 +43,12 @@ export default {
       set(value) {
         return (this.$store.state.isCategorySearching = value);
       }
-    },
-    searchInput: {
-      get() {
-        return this.$store.state.searchInput;
-      },
-      set(value) {
-        return (this.$store.state.searchInput = value);
-      }
     }
   },
 
   methods: {
     scrollTrigger: function() {
-      // if (!this.isCategorySearching) {
+      //   if (!this.isCategorySearching) {
       const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
           if (
@@ -72,39 +57,29 @@ export default {
           ) {
             this.isBussy = true;
             this.currentPage += 1;
-            this.fetchMoreMovies();
+            this.fetchMoreSearchMovies();
           }
         });
       });
 
       observer.observe(this.$refs.infinitescrolltrigger);
-      // } else {
-      //   this.isBussy = false;
-      // }
+      //   } else {
+      //     this.isBussy = false;
+      //   }
     },
 
-    fetchMoreMovies: async function() {
-      let urlPath;
-      if (this.isCategorySearching) {
-        urlPath =
-          "https://api.themoviedb.org/3/search/movie?api_key=" +
-          this.APIKEY +
-          "&query=" +
-          this.searchInput +
-          "&page=" +
-          this.currentPage;
-      } else {
-        urlPath =
-          "https://api.themoviedb.org/3/" +
-          this.query +
-          "?api_key=" +
-          this.APIKEY +
-          "&page=" +
-          this.currentPage;
-      }
+    fetchMoreSearchMovies: async function() {
+      const urlPath =
+        "https://api.themoviedb.org/3/search/movie?api_key=" +
+        this.APIKEY +
+        "&query=" +
+        this.query +
+        "&page=" +
+        this.currentPage;
+
       let res = await fetch(urlPath);
       let movies = await res.json();
-      this.$store.dispatch("fetchAllCatMovies", movies.results);
+      this.$store.dispatch("fetchMoreSearchMovies", movies.results);
       // console.log(movies);
       this.isBussy = false;
       if (this.totalResult < movies.total_results) {

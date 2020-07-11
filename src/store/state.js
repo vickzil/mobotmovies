@@ -24,6 +24,7 @@ export default {
   currentPage: 2,
   currentCatPage: 2,
   currentMenuCatPage: 2,
+  currentSearchPage: 2,
   imageUrl: "https://image.tmdb.org/t/p/w500",
   apiKEY: "871bc413d32dc2aa35cef18698718a80",
   i: 1,
