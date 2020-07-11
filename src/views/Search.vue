@@ -18,7 +18,7 @@
             </div>
             <!-- ALL MOVIES -->
             <div class="movies mt-5" v-if="films.length">
-              <h3 class="movie-heading" id="all-movie-title">Search Name</h3>
+              <h3 class="movie-heading" id="all-movie-title">Search Result</h3>
               <div id="totalMovies">
                 <div class="category-movies" id="cat-id">
                   <MovieOneCard v-for="movie in films" :key="movie.id" :movie="movie" />
