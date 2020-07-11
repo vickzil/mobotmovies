@@ -10,7 +10,7 @@
       </p>
       <p>
         Designed By
-        <a href="http://victornwakwue.online">
+        <a href="https://victornwakwue.netlify.app/">
           <span class="yellow-color">Victor Nwakwue</span>
         </a>
       </p>
